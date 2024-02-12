@@ -1,0 +1,19 @@
+{
+  "name": "unreal-websocket-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --env-file=.env server.js",
+    "start": "node --env-file=.env server.js"
+  },
+  "author": "Ruaidhri MacKenzie",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}

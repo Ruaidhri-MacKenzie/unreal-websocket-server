@@ -42,6 +42,7 @@ body {
 
 header {
 	font-size: 1.25rem;
+	text-align: right;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;

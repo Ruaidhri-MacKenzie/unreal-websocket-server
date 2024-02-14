@@ -21,19 +21,16 @@ const serverBroadcast = (message) => {
 };
 
 const onConnection = (ws) => {
-	const id = randomUUID();
-
 	ws.on("close", () => {
-		console.log(`Client Disconnect: ${id}`);
+		console.log(`Disconnection: ${ws._socket.remoteAddress}`);
 	});
 	
 	ws.on("message", (data) => {
-		console.log(`Received Message: ${data}`);
-		serverBroadcast(`Client ${id} ${data}`);
+		// console.log(JSON.stringify(JSON.parse(data)));
+		serverBroadcast(JSON.stringify(JSON.parse(data)));
 	});
 	
-	console.log(`Client Connect: ${id}`);
-	ws.send(`Connected: ${id}`);
+	console.log(`Connection: ${ws._socket.remoteAddress}`);
 };
 
 wss.on("connection", onConnection);
